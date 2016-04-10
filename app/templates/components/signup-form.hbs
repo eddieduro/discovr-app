@@ -1,0 +1,11 @@
+{{#if session.currentUser}}
+<h3>Already logged in!</h3>
+{{else}}
+<form>
+  <label>Email</label>
+  {{input value=email}}
+  <label>Password</label>
+  {{input value=password type="password"}}
+  <button class="btn btn-primary" {{action 'register' user}}>register</button>
+</form>
+{{/if}}
