@@ -1,4 +1,5 @@
 nav{
+  display: table;
   width: 100%;
   height: 60px;
   ul{
@@ -20,4 +21,11 @@ nav{
       }
     }
   }
+}
+
+.logo {
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
 }
