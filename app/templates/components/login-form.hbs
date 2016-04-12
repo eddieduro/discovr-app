@@ -1,5 +1,5 @@
-{{#if session.currentUser }}
 {{log session.currentUser.[0].email}}
+{{#if session.currentUser }}
   <h2>Logged in as, {{session.currentUser.[0].email}}</h2>
   {{else}}
   <h1>Login</h1>

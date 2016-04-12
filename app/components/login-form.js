@@ -14,12 +14,15 @@ export default Ember.Component.extend({
         var dbPassword = user.get('password');
 
         if((email === dbEmail) && (password === dbPassword)) {
-          matches.push(true);
+          //
+          // this.set('ifMatches', true);
+          matches.unshift(true);
           currentUser.push(user);
         } else {
           matches.push(false);
         }
       });
+      console.log(matches[0]);
       if( matches[0] === true ){
         this.get("session").login(currentUser).then(function(){
           console.log(this.get('session').get('currentUser'))
