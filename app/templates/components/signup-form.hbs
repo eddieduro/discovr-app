@@ -11,7 +11,7 @@
   <label>Password</label>
   {{input value=password type="password"}}
   <label>Profile Picture</label>
-  {{input value=profilePicture}}
-  <button class="btn btn-primary" {{action 'register' user}}>register</button>
+  {{input value=profilePicture type='file'}}
+  <button class="btn" {{action 'register' user}}>register</button>
 </form>
 {{/if}}

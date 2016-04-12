@@ -24,15 +24,9 @@ export default Ember.Component.extend({
       });
       console.log(matches[0]);
       if( matches[0] === true ){
-        this.get("session").login(currentUser).then(function(){
-          console.log(this.get('session').get('currentUser'))
-          this.transitionTo('index');
-
-        }).catch((reason)=>{
-          console.log("Error: " + reason);
-        });
+        this.get("session").login(currentUser)
+        this.sendAction('login', currentUser);
       }
-      this.transitionTo('index');
     },
     transitionToPreviousRoute(){
       var previousTransition = this.get('previousTransition');
@@ -40,7 +34,7 @@ export default Ember.Component.extend({
         this.set('previousTransition', null);
         previousTransition.retry();
       } else {
-        this.transitionTo('index');
+        this.transitionTo('index', );
       }
     }
   }

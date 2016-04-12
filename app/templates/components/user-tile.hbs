@@ -1,4 +1,3 @@
 {{#if session.currentUser}}
-<h2>Logged in as, {{session.currentUser}}</h2>
-{{log session}}
+<h2>Logged in as, {{session.currentUser.[0].firstName}}</h2>
 {{/if}}
