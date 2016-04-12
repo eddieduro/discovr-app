@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   actions: {
     login(){
       var matches = [];
+      var currentUser = [];
       let {email, password} = this.getProperties('email', 'password');
       var currSession = this.get("session");
       this.get('users').forEach(function(user) {
@@ -13,23 +14,22 @@ export default Ember.Component.extend({
         var dbPassword = user.get('password');
 
         if((email === dbEmail) && (password === dbPassword)) {
-          console.log(matches);
-          //
-          // this.set('ifMatches', true);
           matches.push(true);
+          currentUser.push(user);
         } else {
           matches.push(false);
         }
       });
       if( matches[0] === true ){
-        this.get("session").login(email, password).then(function(){
+        this.get("session").login(currentUser).then(function(){
+          console.log(this.get('session').get('currentUser'))
           this.transitionTo('index');
 
         }).catch((reason)=>{
           console.log("Error: " + reason);
         });
-        this.transitionTo('index');
       }
+      this.transitionTo('index');
     },
     transitionToPreviousRoute(){
       var previousTransition = this.get('previousTransition');
