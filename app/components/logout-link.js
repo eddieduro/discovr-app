@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     logout(){
       this.set('loggedin', false)
       this.get('session').logout();
+      this.sendAction('logout');
     }
   }
 });
