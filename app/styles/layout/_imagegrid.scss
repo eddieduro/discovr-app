@@ -1,0 +1,14 @@
+.image-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.index-images {
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
