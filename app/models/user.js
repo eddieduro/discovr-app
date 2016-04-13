@@ -5,5 +5,6 @@ export default DS.Model.extend({
   lastName: DS.attr(),
   email: DS.attr(),
   password: DS.attr(),
-  profilePicture: DS.attr()
+  profilePicture: DS.attr(),
+  pictures: DS.hasMany('picture', {async: true})
 });

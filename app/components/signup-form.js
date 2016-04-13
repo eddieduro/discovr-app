@@ -11,10 +11,10 @@ export default Ember.Component.extend({
         password:  this.get('password'),
         profilePicture:  this.get('profilePicture') ? this.get('profilePicture'): "http://picturepan2.github.io/spectre/demo/img/avatar-1.png"
       }
-    console.log(this.get('users'));
+    // console.log(this.get('users'));
     this.get('users').every(function(user){
       var userEmail = user.get('email');
-      console.log(userEmail, params.email);
+      // console.log(userEmail, params.email);
       if(userEmail === params.email) {
         alert("Account with that email already exists!");
         return false;
@@ -22,15 +22,8 @@ export default Ember.Component.extend({
         alert("Registration Successful!");
         return false;
       }
-    })
-
-    this.sendAction('register', params);
-    this.transitionTo('login');
-      // var newUser = this.store.createRecord('user', {
-      //
-      // });
-
-      // user.save();
-     }
+    });
+      this.sendAction('register', params);
+    }
    }
 });

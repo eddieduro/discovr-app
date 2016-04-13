@@ -1,3 +1,6 @@
 {{user-tile}}
 {{log profile.id}}
-<a {{action 'transitionToProfile'}}>Profile</a>
+{{profile-link transitionToProfile='transitionToProfile'}}
+{{#each model.pictures as |picture|}}
+<img src={{picture.dataURL}}/>
+{{/each}}

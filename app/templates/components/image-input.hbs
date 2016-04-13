@@ -1,16 +1,19 @@
-<strong>Image Input</strong><br>
+{{#if session.currentUser}}
+  <h2>Logged in as, {{session.currentUser.[0].firstName}}</h2>
+  <strong>Image Input</strong><br>
 
-{{#if file}}
-<img src="{{file.dataURL}}" width="300">
+  {{#if file}}
+  <img src="{{file.dataURL}}" width="300">
 
-<ul>
-  <li>Name: {{file.name}}</li>
-  <li>Type: {{file.type}}</li>
-  <li>Size: {{file.size}} bytes</li>
-  <li>Last modified: {{file.date}}</li>
-</ul>
+  <ul>
+    <li>Name: {{file.name}}</li>
+    <li>Type: {{file.type}}</li>
+    <li>Size: {{file.size}} bytes</li>
+    <li>Last modified: {{file.date}}</li>
+  </ul>
+  {{/if}}
+
+  <br>
+
+  {{file-uploader user=user fileChanged="fileSelectionChanged"}}
 {{/if}}
-
-<br>
-
-{{file-uploader user=user fileChanged="fileSelectionChanged"}}

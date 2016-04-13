@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       this.transitionTo('profile', currentUser[0])
     },
     transitionToProfile(currentUser){
-      this.sendAction('index', currentUser[0])
+      this.sendAction('transitionToProfile', currentUser[0])
     }
   }
 });
