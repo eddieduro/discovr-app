@@ -25,6 +25,9 @@ export default Ember.Route.extend({
       });
       picture.save();
       this.transitionTo('profile');
+    },
+    deleteImage(picture){
+      return picture.destroyRecord();
     }
-  }
+  } 
 });

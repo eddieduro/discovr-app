@@ -23,7 +23,13 @@ export default Ember.TextField.extend({
             inputFile.lastModifiedDate.toLocaleDateString() : 'n/a',
     };
     console.log(fileInfo.type);
-    if((fileInfo.size < 10000000) && (fileInfo.type === (('image/png') || ('image/jpg')))) {
+    if(fileInfo.size > 10000000) {
+      alert('Please upload an image smaller than 10MB');
+    }
+    if((fileInfo.type !== 'image/jpeg') && (fileInfo.type !== 'image/png')) {
+      alert('Please upload a jpg or png file');
+    }
+    if(((fileInfo.size < 10000000) && (fileInfo.type === (('image/png')))) || (((fileInfo.size < 10000000) && (fileInfo.type === (('image/jpeg')))))) {
       var fileReader = new FileReader();
 
       fileReader.onload = function(e) {
@@ -35,9 +41,6 @@ export default Ember.TextField.extend({
 
       let firstFile = e.target.files[0];
       fileReader.readAsDataURL(firstFile);
-    } else {
-      alert("no bueno");
     }
-
   },
 });

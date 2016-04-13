@@ -2,20 +2,7 @@
 <div class="container">
   <div class="user-images">
   {{#each user.pictures as |picture|}}
-    <img src={{picture.dataURL}} alt="picture" class="uploaded-pictures"/>
-  {{/each}}
-  </div>
-</div>
-<div class="container">
-  <div class="edit-form">
-  {{#each user.pictures as |picture|}}
-      <form class="uploaded-picture-form">
-        <label for="description">Description</label>
-        {{input type=text value=description}}
-        <label for="tags">Tags</label>
-        {{input type=text value=tags}}
-        <button {{action "updateDetails" picture}}>Submit</button>
-      </form>
+    {{picture-detail picture=picture deleteImage='deleteImage'}}
   {{/each}}
   </div>
 </div>
