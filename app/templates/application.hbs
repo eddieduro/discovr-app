@@ -1,10 +1,12 @@
 <nav>
-  <ul>
-    <li class="nav-link">{{#link-to 'index'}}Home{{/link-to}}</li>
-    {{login-link}}
-    <li class="nav-link">{{signup-link}}</li>
-    <li class="nav-link">{{logout-link logout='logout'}}</li>
-  </ul>
+  <div class="container">    
+    <ul>
+      <li class="nav-link">{{#link-to 'index'}}Home{{/link-to}}</li>
+      {{login-link}}
+      <li class="nav-link">{{signup-link}}</li>
+      <li class="nav-link">{{logout-link logout='logout'}}</li>
+    </ul>
+  </div>
   <div class="search">
     <input id="search" type="checkbox" /><label class="search-init" for="search"></label><label class="search-active" for="search"></label>
     <div class="search-border"></div>

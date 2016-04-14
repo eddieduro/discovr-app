@@ -1,0 +1,142 @@
+*,*:before,*:after{
+  box-sizing:border-box;
+}
+
+@mixin pos {
+  position:absolute;
+  left:50%;
+  top:50%;
+}
+$border:.6rem;
+$time:.2s;
+.search{
+  @include pos;
+  margin-top: -400px;
+  width: 30rem;
+  height: 6rem;
+  margin-left: 250px;
+  #search{
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+  }
+  .search-init{
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:12rem;
+    width:7rem;
+    height:7rem;
+    cursor:pointer;
+  }
+  .search-border{
+    @include pos;
+    transform:translate(-50%,-50%);
+    width:6rem;
+    height:100%;
+    border:$border solid $grey-secondary;
+    border-radius:6rem;
+    transition:width $time*2 $time*2;
+  }
+  .search-border:after{
+    content:"";
+    position:absolute;
+    right:-1.6rem;
+    bottom:-1.6rem;
+    width:3rem;
+    height:$border;
+    transform-origin:100% 50%;
+    transform:rotate(225deg) translatex(3rem);
+    background:$grey-secondary;
+    border-radius:$border;
+    transition:width $time $time*4;
+  }
+  .search-field{
+    position:relative;
+    z-index:-1;
+    width:26rem;
+    height:6rem;
+    padding:1rem 0 1rem 2.4rem;
+    background:transparent;
+    border:0 none;
+    outline:none;
+    font-size:2.4rem;
+    color:$grey-secondary;
+    opacity:0;
+    transition:opacity $time;
+  }
+  .search-active{
+    position:absolute;
+    z-index:3;
+    top:1.5rem;
+    right:1.5rem;
+    width:3rem;
+    height:3rem;
+    cursor:pointer;
+    transform:scale(0);
+  }
+  .close-search{
+    position:absolute;
+    z-index:-1;
+    top:1.5rem;
+    right:1.5rem;
+    width:3rem;
+    height:3rem;
+    &:before,&:after{
+      content:"";
+      position:absolute;
+      left:0;
+      top:1.2rem;
+      width:100%;
+      height:$border;
+      background:$grey-secondary;
+      border-radius:$border;
+      opacity:0;
+    }
+    &:before{
+      transform:rotate(-45deg) translatex(2rem);
+      transition:transform $time,
+             opacity ($time - .1) ($time - .1);
+    }
+    &:after{
+      transform:rotate(45deg) translatex(2rem);
+      transition:transform $time $time,
+             opacity ($time - .1) ($time + .1);
+    }
+  }
+  /* checked */
+  #search:checked ~ .search-init{
+    transform:scale(0);
+  }
+  #search:checked ~ .search-border{
+    width:100%;
+    transition:width $time*2 $time;
+  }
+  #search:checked ~ .search-border:after{
+    width:0;
+    transition:width $time cubic-bezier(0.42, -0.7, 0.62, 1.25);
+  }
+  #search:checked ~ .search-field{
+    z-index:auto;
+    opacity:1;
+    transition:opacity $time $time*3;
+  }
+  #search:checked ~ .close-search{
+    z-index:auto;
+  }
+  #search:checked ~ .close-search:before{
+    opacity:1;
+    transform:rotate(-45deg);
+    transition:transform $time $time*3 cubic-bezier(0.73, 0.14, 0.4, 1.58),
+           opacity ($time - .1) $time*3;
+  }
+  #search:checked ~ .close-search:after{
+    opacity:1;
+    transform:rotate(45deg);
+    transition:transform $time $time*4 cubic-bezier(0.73, 0.14, 0.4, 1.58),
+           opacity ($time - .1) $time*4;
+  }
+  #search:checked ~ .search-active{
+    transform:scale(1);
+  }
+}
