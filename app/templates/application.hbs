@@ -8,12 +8,7 @@
       <li class="nav-link">{{profile-link transitionToProfile='transitionToProfile'}}</li>
     </ul>
   </div>
-  <div class="search fixed-top">
-    <input id="search" type="checkbox" /><label class="search-init" for="search"></label><label class="search-active" for="search"></label>
-    <div class="search-border"></div>
-    <input class="search-field" id="search-field" type="text" />
-    <div class="close-search"></div>
-  </div>
+  {{search-form search='search'}}
   <span><img src='../../images/logo.png' class="logo" alt="discovr logo"/></span>
 </nav>
 {{outlet}}

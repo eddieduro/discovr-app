@@ -5,6 +5,9 @@ export default Ember.Route.extend({
   actions: {
     logout(){
       this.transitionTo('index');
+    },
+    search(params){
+      this.transitionTo('search', params.tag);
     }
   }
 });
