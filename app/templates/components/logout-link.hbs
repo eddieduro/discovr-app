@@ -1,6 +1,3 @@
 {{#if session.currentUser}}
   <a {{action 'logout'}}>Log-out</a>
 {{/if}}
-{{#unless session.isLoggedIn}}
-<p>Logged out!</p>
-{{/unless}}
