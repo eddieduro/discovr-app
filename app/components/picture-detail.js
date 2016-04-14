@@ -6,7 +6,11 @@ export default Ember.Component.extend({
   actions: {
 
     formShow(){
-      this.set('formHide', true);
+      if(this.get('formHide') === false){
+        this.set('formHide', true);
+      } else{
+        this.set('formHide', false);
+      }
     },
     deleteImage(picture){
       if(confirm("Are you sure you want to delete this picture?")){
