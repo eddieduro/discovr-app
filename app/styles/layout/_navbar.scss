@@ -18,6 +18,7 @@ nav{
         padding: 20px;
         &:hover{
           color: $grey-primary;
+          cursor: pointer;
           text-decoration: underline;
         }
       }
