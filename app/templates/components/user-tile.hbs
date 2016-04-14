@@ -1,3 +1,8 @@
 {{#if session.currentUser}}
-<h2>Logged in as, {{session.currentUser.[0].firstName}}</h2>
+<div class="container">
+  <h4 class='text-center'>Welcome, {{session.currentUser.[0].firstName}}</h4>
+  <div class="text-center">
+    <img src={{session.currentUser.[0].profilePicture}} alt="profile picture"  id='profile-pic'/>
+  </div>
+</div>
 {{/if}}
