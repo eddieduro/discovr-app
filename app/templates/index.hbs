@@ -3,7 +3,7 @@
   {{#each model.pictures as |picture|}}
   <img src={{picture.dataURL}} class='index-images'/>
   <a href={{picture.dataURL}} download={{picture.name}}> download </a>
-  <span id="heart">{{fa-icon "heart"}}</span>
+  {{likes-tile picture=picture}}
   <span id="plus">{{fa-icon "plus"}}</span>
   {{/each}}
 </div>
