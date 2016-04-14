@@ -18,16 +18,4 @@ export default Ember.Route.extend({
       }
     })
   }
-  // actions:{
-  //   search(){
-  //     var pictures = this.store.query('picture', {tags: tag});
-  //     console.log(pictures, params);
-  //     for(var i = 0; i < pictures.get('length'); i++){
-  //       console.log("works");
-  //       if(pictures[i].tags === tag){
-  //         results.push(picture);
-  //       }
-  //     }
-  //   }
-  // }
 });
