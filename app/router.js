@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('signup');
   this.route('profile', {path: '/profile/:profile_id'});
   this.route('search', {path: '/search/:search_id'});
+  this.route('loading');
 });
 
 export default Router;
