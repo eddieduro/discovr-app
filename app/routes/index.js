@@ -56,6 +56,8 @@ export default Ember.Route.extend({
       var id = this.get('currentModel').get('lastObject.id');
       this.set('startAt', id);
       this.set('endAt', null);
+      var page = this.get('page');
+      page = page + 1;
       if(this.get('page') > 0){
         this.set('hidePrev', false)
         this.set('hideNext', false)
