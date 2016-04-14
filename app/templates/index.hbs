@@ -5,6 +5,7 @@
   {{#each model.pictures as |picture|}}
   <img src={{picture.dataURL}} class='index-images'/>
   <a href={{picture.dataURL}} download={{picture.name}}> download </a>
+  <span>{{fa-icon "heart"}}</span>
   {{/each}}
 </div>
 <!--

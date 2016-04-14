@@ -7,15 +7,23 @@
   max-width: 1370px;
   margin-left: auto;
   margin-right: auto;
-    a {
-      position: absolute;
-      color: #000;
-      font-family: 'arial';
-      text-align: center;
-      display: block;
-      margin-top: 365px;
-      margin-left: -230px;
-    }
+  a {
+    position: absolute;
+    color: #000;
+    font-family: 'arial';
+    text-align: center;
+    display: block;
+    margin-top: 365px;
+    margin-left: -230px;
+  }
+  .fa {
+    position: absolute;
+    color: red;
+    text-align: center;
+    display: block;
+    margin-top: 365px;
+    margin-left: -300px;
+  }
 }
 .index-images {
   margin-top: 50px;
