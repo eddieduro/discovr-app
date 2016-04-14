@@ -6,6 +6,7 @@ export default Ember.Component.extend({
       var params = {
         tag: this.get('search')
       };
+      this.set('search', "");
       this.sendAction('search', params);
     }
   }

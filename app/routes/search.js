@@ -17,5 +17,10 @@ export default Ember.Route.extend({
         return results;
       }
     })
+  },
+  actions: {
+    transitionToProfile(sessionUser) {
+      this.transitionTo('profile', sessionUser);
+    },
   }
 });

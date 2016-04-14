@@ -1,3 +1,13 @@
-{{#each model as |picture|}}
-<img src={{picture.dataURL}}/>
-{{/each}}
+<h3>Results:</h3>
+<div class="image-grid">
+  {{#each model as |picture|}}
+    <img src={{picture.dataURL}} class='index-images'/>
+    <a href={{picture.dataURL}} download={{picture.name}}> download </a>
+    {{log picture}}
+
+    {{likes-tile picture=picture}}
+    <span id="plus">{{fa-icon "plus"}}</span>
+    <span>Uploaded by, {{picture.user.firstName}}</span>
+    <span><img src={{picture.user.profilePicture}} alt={{picture.user.firstName}} /></span>
+  {{/each}}
+</div>
