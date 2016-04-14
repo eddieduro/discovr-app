@@ -1,7 +1,8 @@
 {{#if session.currentUser}}
   {{user-tile}}
 <div class="container">
-  <strong>Image Input</strong><br>
+  <label for='file'>Image Input</label>
+  <br>
   {{#if file}}
   <img src="{{file.dataURL}}" width="300">
   <ul>
