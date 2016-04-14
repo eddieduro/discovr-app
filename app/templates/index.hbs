@@ -1,11 +1,23 @@
 {{user-tile}}
 <div class="image-grid">
-  {{#each model.pictures as |picture|}}
-  <img src={{picture.dataURL}} class='index-images'/>
-  <a href={{picture.dataURL}} download={{picture.name}}> download </a>
-  {{likes-tile picture=picture}}
-  <span id="plus">{{fa-icon "plus"}}</span>
+  {{#each model as |picture|}}
+    <img src={{picture.dataURL}} class='index-images'/>
+    <a href={{picture.dataURL}} download={{picture.name}}> download </a>
+    {{likes-tile picture=picture}}
+    <span id="plus">{{fa-icon "plus"}}</span>
   {{/each}}
+</div>
+<div class="button-group">
+  {{#if hidePrev}}
+  <button class='btn prev hidden' {{action 'prev'}}>Prev</button>
+  {{else}}
+  <button class='btn prev' {{action 'prev'}}>Prev</button>
+  {{/if}}
+  {{#if hideNext}}
+  <button class='btn next hidden' {{action 'next'}}>Next</button>
+  {{else}}
+  <button class='btn next' {{action 'next'}}>Next</button>
+  {{/if}}
 </div>
 <!--
 if foo is true
