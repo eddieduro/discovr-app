@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-images">
   {{#each user.pictures as |picture|}}
-    {{picture-detail picture=picture deleteImage='deleteImage'}}
+    {{picture-detail picture=picture deleteImage='deleteImage' updateDetails='updateDetails'}}
   {{/each}}
   </div>
 </div>
