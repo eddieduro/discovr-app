@@ -5,6 +5,12 @@
     <li class="nav-link">{{signup-link}}</li>
     <li class="nav-link">{{logout-link logout='logout'}}</li>
   </ul>
+  <div class="search">
+    <input id="search" type="checkbox" /><label class="search-init" for="search"></label><label class="search-active" for="search"></label>
+    <div class="search-border"></div>
+    <input class="search-field" id="search-field" type="text" />
+    <div class="close-search"></div>
+  </div>
   <span><img src='../../images/logo.png' class="logo" alt="discovr logo"/></span>
 </nav>
 {{outlet}}
