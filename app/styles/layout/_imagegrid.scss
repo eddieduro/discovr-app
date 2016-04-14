@@ -10,19 +10,39 @@
   a {
     position: absolute;
     color: #000;
-    font-family: 'arial';
+    font-family: $link-font;
     text-align: center;
     display: block;
     margin-top: 365px;
     margin-left: -230px;
   }
-  .fa {
+  #heart {
     position: absolute;
     color: red;
     text-align: center;
     display: block;
     margin-top: 365px;
     margin-left: -300px;
+    transition: all 0.5s ease;
+    &:hover{
+      font-size: 14pt;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+  }
+  #plus {
+    position: absolute;
+    color: $grey-primary;
+    text-align: center;
+    display: block;
+    margin-top: 365px;
+    margin-left: -110px;
+    transition: all 0.5s ease;
+    &:hover{
+      font-size: 14pt;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
   }
 }
 .index-images {
