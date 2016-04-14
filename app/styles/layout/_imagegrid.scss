@@ -2,9 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: space-between;
+  align-content: center;
+  position:relative;
+  max-width: 1370px;
+  margin-left: auto;
+  margin-right: auto;
+    a {
+      position: absolute;
+      color: #000;
+      font-family: 'arial';
+      text-align: center;
+      display: block;
+      margin-top: 400px;
+      margin-left: -230px;
+    }
 }
-
 .index-images {
   margin-top: 50px;
   height: 300px;

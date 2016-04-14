@@ -4,5 +4,14 @@
 <div class="image-grid">
   {{#each model.pictures as |picture|}}
   <img src={{picture.dataURL}} class='index-images'/>
+  <a href={{picture.dataURL}} download={{picture.name}}> download </a>
   {{/each}}
 </div>
+<!--
+if foo is true
+  <div class= bar>
+else
+  <div class='foobar'>
+/if
+
+-->

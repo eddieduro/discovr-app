@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   model(){
     return Ember.RSVP.hash({
       users: this.store.findAll('user'),
-      pictures: this.store.query('picture', { limitToFirst: 3, startsAt: 0})
+      pictures: this.store.query('picture', { limitToFirst: 50, startsAt: 0})
     })
   },
   actions: {
