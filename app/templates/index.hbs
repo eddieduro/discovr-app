@@ -1,7 +1,9 @@
 {{user-tile}}
 <div class="image-grid">
   {{#each model as |picture|}}
-    <img src={{picture.dataURL}} class='index-images'/>
+    {{#liquid-bind}}
+      <img src={{picture.dataURL}} class='index-images'/>
+    {{/liquid-bind}}
     <a href={{picture.dataURL}} download={{picture.name}}> download </a>
     {{likes-tile picture=picture}}
     <span id="plus">{{fa-icon "plus"}}</span>
@@ -19,6 +21,7 @@
   <button class='btn next' {{action 'next'}}>Next</button>
   {{/if}}
 </div>
+{{liquid-outlet}}
 <!--
 if foo is true
   <div class= bar>
