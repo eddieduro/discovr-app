@@ -6,7 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     height: 200px;
-    width: 200px;
+    width: auto;
   }
 }
 .edit-form{
@@ -16,9 +16,9 @@
 .uploaded-picture-form{
   margin-top: 50px;
   margin-bottom: 50px;
-  height: 240px;
-  width: 300px;
-  padding: 15px;
+  height: 360px;
+  width: 330px;
+  padding: 35px;
   display: inline-block;
 }
 #profile-pic {
