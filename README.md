@@ -1,7 +1,6 @@
 # Discovr
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This app was developed to allow users to upload HD images and show them off and allow other users to download and use them for projects or whatever purpose. Users can use the search bar to search for relevant tags.
 
 ## Prerequisites
 
